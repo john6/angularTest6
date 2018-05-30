@@ -4,7 +4,8 @@
   "description": "a practice application.",
   "main": "index.js",
   "dependencies": {
-    "audit": "0.0.6"
+    "audit": "0.0.6",
+    "hoek": "^5.0.3"
   },
   "devDependencies": {},
   "scripts": {
