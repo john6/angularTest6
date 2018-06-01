@@ -1,27 +1,27 @@
-export const CHARACTERS: any[] =
+export const STAFFTYPEDATA: any[] =
   [
     {
-      name: 'Earl of Lemongrab',
-      age: 'Unknown',
-      species: 'Lemon Candy',
-      occupation: 'Earl, Heir to the Candy Kingdom Throne'
+      Description: 'this is a description',
+      Code: 'this is a code',
+      Role: 'this is a role',
+      Active: 'this is a active',
+      Last_Modified_By: 'this is a last modified by',
+      Last_Modified_Date_Time: 'this is a last modified date time'
     },
     {
-      name: 'Bonnibel Bubblegum',
-      age: '19',
-      species: 'Gum Person',
-      occupation: 'Returned Ruler of the Candy Kingdom'
+      Description: 'yarp',
+      Code: 'yarp',
+      Role: 'yarp',
+      Active: 'yarp',
+      Last_Modified_By: 'yarp',
+      Last_Modified_Date_Time: 'yarp'
     },
     {
-      name: 'Phoebe',
-      age: '16',
-      species: 'Flame Person',
-      occupation: 'Ruler of the Fire Kingdom'
-    },
-    {
-      name: 'Lumpy Space Princess',
-      age: '18',
-      species: 'Lumpy Space Person',
-      occupation: 'Babysitter'
+      Description: 'pants',
+      Code: 'pants',
+      Role: 'pants',
+      Active: 'pants',
+      Last_Modified_By: 'pants',
+      Last_Modified_Date_Time: 'pants'
     },
   ]

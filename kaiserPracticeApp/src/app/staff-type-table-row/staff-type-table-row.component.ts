@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class StaffTypeTableRowComponent implements OnInit {
 
-  @Input() character: any;
+  @Input() staffType: any;
   @Input() columns: string[];
 
   constructor() { }

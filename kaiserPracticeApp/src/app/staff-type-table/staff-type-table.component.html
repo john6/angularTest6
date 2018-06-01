@@ -1,12 +1,12 @@
-<table>
-  <tr>
-    <th *ngFor="let col of columns">
+<table mat-table class="mat-elevation-z8">
+  <tr mat-row>
+    <th mat-header-cell *ngFor="let col of columns">
       {{col}}
     </th>
   </tr>
-  <tr *ngFor="let char of characters | async">
-    <td *ngFor="let col of columns">
-      {{char[col]}}
+  <tr mat-row *ngFor="let st of staffTypes | async">
+    <td mat-cell *ngFor="let col of columns">
+      {{st[col]}}
     </td>
   </tr>
 </table>
