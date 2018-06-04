@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-xs-12">
+    <form (ngSubmit)="onAddStaffType(formData)" #formData="ngForm">
+      <div class="row">
+        <div class="col-sm-5 form-group">
+          <label>Staff Type Code</label>
+          <input type="text"
+                 id="staff-type-code"
+                 class="form-control"
+                 name="staffTypeCode"
+                 ngModel
+          >
+        </div>
+        <div class="col-sm-5 form-group">
+          <label>Staff Type Description</label>
+          <input type="text"
+                 id="staff-type-description"
+                 class="form-control"
+                 name="staffTypeDescription"
+                 ngModel
+          >
+        </div>
+        <div class="col-sm-5 form-group">
+          <label>Staff Role</label>
+          <input type="text"
+                 id="staff-role"
+                 class="form-control"
+                 name="staffRole"
+                 ngModel
+          >
+        </div>
+        <div class="col-sm-5 form-group">
+          <label>Enable Call After Work</label>
+          <input type="boolean"
+                 id="call-after-work"
+                 class="form-control">
+        </div>
+        <div class="col-sm-5 form-group">
+          <label>Restrict Call History</label>
+          <input type="text"
+                 id="restrict-call-history"
+                 class="form-control"
+                 name="restrictCallHistory"
+                 ngModel>
+        </div>
+        <div class="col-sm-5 form-group">
+          <input type="submit"
+                 id="staff-type-submit"
+                 class="form-control">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

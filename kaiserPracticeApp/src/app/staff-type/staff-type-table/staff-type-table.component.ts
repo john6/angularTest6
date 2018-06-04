@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StaffTypeService } from '../staff-type.service';
+import { StaffTypeService } from '../../staff-type.service';
 import { Observable } from 'rxjs';
 
 @Component({

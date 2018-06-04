@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { STAFFTYPEDATA } from './staff-type-data';
+import { StaffTypeModel } from "./models/staff-type.model";
 import { of } from 'rxjs'
 //import { delay } from 'rxjs'
 import 'rxjs/add/operator/delay';
@@ -15,7 +16,16 @@ export class StaffTypeService {
   getStaffTypes(): Observable<any[]>{
     return of(STAFFTYPEDATA).delay(100);
   }
+
   getColumns(): string[]{
     return ["Description", "Code", "Role", "Active", "Last_Modified_By", "Last_Modified_Date_Time"]};
+
+
+  getStaffTypeColumns(): string {
+    return " "
+  }
+
+
+
 }
 

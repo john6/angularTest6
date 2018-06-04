@@ -6,8 +6,12 @@ import { HeaderComponent } from './header/header.component';
 import { StaffTypeComponent } from './staff-type/staff-type.component';
 import { MatTabsModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { StaffTypeTableComponent } from './staff-type-table/staff-type-table.component';
-import { StaffTypeTableRowComponent } from './staff-type-table-row/staff-type-table-row.component';
+import { StaffTypeTableComponent } from './staff-type/staff-type-table/staff-type-table.component';
+import { StaffTypeTableRowComponent } from './staff-type/staff-type-table/staff-type-table-row/staff-type-table-row.component';
+import { StaffTypeEditComponent } from './staff-type/staff-type-edit/staff-type-edit.component';
+import {FormsModule} from "@angular/forms";
+import {HttpModule} from "@angular/http";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -15,12 +19,15 @@ import { StaffTypeTableRowComponent } from './staff-type-table-row/staff-type-ta
     HeaderComponent,
     StaffTypeComponent,
     StaffTypeTableComponent,
-    StaffTypeTableRowComponent
+    StaffTypeTableRowComponent,
+    StaffTypeEditComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpClientModule,
     MatTabsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
