@@ -13,10 +13,10 @@ export class StaffTypeEditComponent implements OnInit {
   ngOnInit() {
   }
 
-
-  //onAddStaffType(form: NgForm) {
-  //  const
-  //}
-
+/*
+  onAddStaffType(form: NgForm) {
+    form
+  }
+*/
 
 }

@@ -5,8 +5,28 @@
     </th>
   </tr>
   <tr mat-row *ngFor="let st of staffTypes | async">
+    <!--
     <td mat-cell *ngFor="let col of columns">
       {{st[col]}}
+    </td>
+    -->
+    <td mat-cell >
+      {{st.Code}}
+    </td>
+    <td mat-cell >
+      {{st.Description}}
+    </td>
+    <td mat-cell >
+      {{st.Role}}
+    </td>
+    <td mat-cell >
+      {{st.Active}}
+    </td>
+    <td mat-cell >
+      {{st.Last_Modified_By}}
+    </td>
+    <td mat-cell >
+      {{st.Last_Modified_Date_Time}}
     </td>
   </tr>
 </table>
