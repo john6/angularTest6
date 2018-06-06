@@ -1,23 +1,23 @@
 <div class="row">
   <div class="col-xs-12">
-    <form (ngSubmit)="onAddStaffType(formData)" #formData="ngForm">
+    <form [formGroup]="addStaffTypeForm" (ngSubmit)="onSubmitAddStaffType()">
       <div class="row">
-        <div class="col-sm-5 form-group">
-          <label>Staff Type Code</label>
-          <input type="text"
-                 id="staff-type-code"
-                 class="form-control"
-                 name="staffTypeCode"
-                 ngModel
-          >
-        </div>
         <div class="col-sm-5 form-group">
           <label>Staff Type Description</label>
           <input type="text"
                  id="staff-type-description"
                  class="form-control"
                  name="staffTypeDescription"
-                 ngModel
+                 formControlName="description"
+          >
+        </div>
+        <div class="col-sm-5 form-group">
+          <label>Staff Type Code</label>
+          <input type="text"
+                 id="staff-type-code"
+                 class="form-control"
+                 name="staffTypeCode"
+                 formControlName="code"
           >
         </div>
         <div class="col-sm-5 form-group">
@@ -26,27 +26,41 @@
                  id="staff-role"
                  class="form-control"
                  name="staffRole"
-                 ngModel
+                 formControlName="role"
           >
         </div>
         <div class="col-sm-5 form-group">
-          <label>Enable Call After Work</label>
-          <input type="boolean"
-                 id="call-after-work"
-                 class="form-control">
+          <label>Active</label>
+          <input type="text"
+                 id="staff-active"
+                 class="form-control"
+                 name="staffActive"
+                 formControlName="active"
+          >
         </div>
         <div class="col-sm-5 form-group">
-          <label>Restrict Call History</label>
+          <label>Last Modified By</label>
           <input type="text"
-                 id="restrict-call-history"
+                 id="last-modified-by"
                  class="form-control"
-                 name="restrictCallHistory"
-                 ngModel>
+                 name="lastModifiedBy"
+                 formControlName="modBy"
+          >
+        </div>
+        <div class="col-sm-5 form-group">
+          <label>Last Modified Date/Time</label>
+          <input type="text"
+                 id="last-modified-date-time"
+                 class="form-control"
+                 name="lastModifiedByDateTime"
+                 formControlName="modDate"
+          >
         </div>
         <div class="col-sm-5 form-group">
           <input type="submit"
                  id="staff-type-submit"
-                 class="form-control">
+                 class="form-control btn btn-primary"
+          >
         </div>
       </div>
     </form>

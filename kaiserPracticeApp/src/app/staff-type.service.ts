@@ -5,10 +5,11 @@ import { StaffType } from "./models/staff-type.model";
 import { of } from 'rxjs'
 //import { delay } from 'rxjs'
 import 'rxjs/add/operator/delay';
+import { Subject } from 'rxjs';
 
 @Injectable()
 export class StaffTypeService {
-
+  practiceActivated = new Subject();
   constructor() { }
 /*
   getStaffTypes(): Observable<any[]>{
@@ -51,7 +52,12 @@ export class StaffTypeService {
   }
 
   getColumns(): string[]{
-    return ["Code", "Description", "Role", "Active", "Last_Modified_By", "Last_Modified_Date_Time"]};
+    return ["Description", "Code", "Role", "Active", "Last_Modified_By", "Last_Modified_Date_Time"]};
+
+
+  printToConsole() {
+    console.log('called this function from staff-table-component')
+  }
 
 }
 

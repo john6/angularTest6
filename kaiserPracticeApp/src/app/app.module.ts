@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 //import {FormsModule} from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { StaffTypeComponent } from './staff-type/staff-type.component';
@@ -12,6 +13,7 @@ import { StaffTypeEditComponent } from './staff-type/staff-type-edit/staff-type-
 import {FormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
 import {HttpClientModule} from "@angular/common/http";
+import {StaffTypeService} from "./staff-type.service";
 
 @NgModule({
   declarations: [
@@ -28,8 +30,9 @@ import {HttpClientModule} from "@angular/common/http";
     HttpClientModule,
     MatTabsModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [StaffTypeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

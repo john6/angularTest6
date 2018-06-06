@@ -4,7 +4,7 @@
       {{col}}
     </th>
   </tr>
-  <tr mat-row *ngFor="let st of staffTypes | async">
+  <tr mat-row *ngFor="let st of staffTypes">
     <!--
     <td mat-cell *ngFor="let col of columns">
       {{st[col]}}
@@ -31,7 +31,7 @@
   </tr>
 </table>
 
-
+<button class="btn btn-primary" (click)="whenClicked()">Activate</button>
 <!--
 I'm not sure if its some different version than the tutorial or something but this breaks everything
 <table>
