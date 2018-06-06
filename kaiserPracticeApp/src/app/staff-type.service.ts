@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { STAFFTYPEDATA } from './staff-type-data';
-import { StaffType } from "./models/staff-type.model";
-import { of } from 'rxjs'
-//import { delay } from 'rxjs'
+import { StaffType } from './models/staff-type.model';
+import { of } from 'rxjs';
+// import { delay } from 'rxjs'
 import 'rxjs/add/operator/delay';
 import { Subject } from 'rxjs';
 
@@ -11,21 +11,7 @@ import { Subject } from 'rxjs';
 export class StaffTypeService {
   practiceActivated = new Subject();
   constructor() { }
-/*
-  getStaffTypes(): Observable<any[]>{
-    return of(STAFFTYPEDATA).delay(100);
-  }
 
-  getColumns(): string[]{
-    return ["Description", "Code", "Role", "Active", "Last_Modified_By", "Last_Modified_Date_Time"]};
-
-
-  getStaffTypeColumns(): string {
-    return " "
-  }
-      )
-  ]
-*/
   private staffTypeList: StaffType[] = [
     new StaffType(
       'This is a code',
@@ -51,8 +37,12 @@ export class StaffTypeService {
     return this.staffTypeList;
   }
 
+  // getStaffTypes(): Observable<any[]>{
+  //   return of(STAFFTYPEDATA).delay(100);
+  // }
+
   getColumns(): string[]{
-    return ["Description", "Code", "Role", "Active", "Last_Modified_By", "Last_Modified_Date_Time"]};
+    return ['Description', 'Code', 'Role', 'Active', 'Last_Modified_By', 'Last_Modified_Date_Time']};
 
 
   printToConsole() {

@@ -5,11 +5,6 @@
     </th>
   </tr>
   <tr mat-row *ngFor="let st of staffTypes">
-    <!--
-    <td mat-cell *ngFor="let col of columns">
-      {{st[col]}}
-    </td>
-    -->
     <td mat-cell >
       {{st.Code}}
     </td>
@@ -32,18 +27,3 @@
 </table>
 
 <button class="btn btn-primary" (click)="whenClicked()">Activate</button>
-<!--
-I'm not sure if its some different version than the tutorial or something but this breaks everything
-<table>
-  <tr>
-    <th *ngFor="let c of columns">
-    {{c}}
-    </th>
-  </tr>
-  <tr *ngFor="let ch of characters | async"
-      app-table-row
-      [character]="ch"
-      [columns]="columns">
-  </tr>
-</table>
--->

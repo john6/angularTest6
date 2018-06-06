@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {FormControl, NgForm} from "@angular/forms";
+import {FormControl, NgForm} from '@angular/forms';
 import { StaffTypeService } from '../../staff-type.service';
-import { StaffType } from "../../models/staff-type.model";
-import { FormGroup, Validators } from "@angular/forms";
+import { StaffType } from '../../models/staff-type.model';
+import { FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-staff-type-edit',
@@ -14,7 +15,7 @@ export class StaffTypeEditComponent implements OnInit {
   @ViewChild('formData') staffTypeForm: NgForm
   addStaffTypeForm: FormGroup;
 
-  constructor(private atService: StaffTypeService) { }
+  constructor(private staffTypeService: StaffTypeService, public dialogRef: MatDialogRef<StaffTypeEditComponent>) { }
 
   ngOnInit() {
     this.addStaffTypeForm = new FormGroup({
@@ -28,21 +29,17 @@ export class StaffTypeEditComponent implements OnInit {
   }
 
   onSubmitAddStaffType() {
-    let addedStaffType = new StaffType(this.addStaffTypeForm.value.staffTypeCode, this.addStaffTypeForm.value.staffTypeDescription, this.addStaffTypeForm.value.staffRole, this.addStaffTypeForm.value.staffActive, this.addStaffTypeForm.value.lastModifiedBy, this.addStaffTypeForm.value.lastModifiedByDateTime);
-    this.atService.addStaffType(addedStaffType);
-    console.log("I can access values fyi" + addedStaffType.Last_Modified_Date_Time)
-    console.log(this.addStaffTypeForm)
-    //this.addStaffTypeForm.controls.
+    const addedStaffType = new StaffType(
+      this.addStaffTypeForm.value.description,
+      this.addStaffTypeForm.value.code,
+      this.addStaffTypeForm.value.role,
+      this.addStaffTypeForm.value.active,
+      this.addStaffTypeForm.value.modBy,
+      this.addStaffTypeForm.value.modDate);
+    this.staffTypeService.addStaffType(addedStaffType);
+    console.log('I can access values: ' + addedStaffType.Last_Modified_Date_Time);
+    console.log(this.addStaffTypeForm);
+    console.log(addedStaffType);
+    // this.addStaffTypeForm.controls.
   }
-
-
-/*
-  onAddStaffType() {
-    let addedStaffType = new StaffType(this.staffTypeForm.form.value.staffTypeCode, this.staffTypeForm.form.value.staffTypeDescription, this.staffTypeForm.form.value.staffRole, this.staffTypeForm.form.value.staffActive, this.staffTypeForm.form.value.lastModifiedBy, this.staffTypeForm.form.value.lastModifiedByDateTime);
-    this.atService.addStaffType(addedStaffType);
-    console.log("I can access values fyi" + addedStaffType.Last_Modified_Date_Time)
-    console.log(this.staffTypeForm)
-  }
-*/
-
 }

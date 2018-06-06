@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { StaffTypeService } from '../../staff-type.service';
 import { Observable } from 'rxjs';
-import { StaffType } from "../../models/staff-type.model";
+import { StaffType } from '../../models/staff-type.model';
 import 'rxjs/Rx';
-import { Observer } from "rxjs/Observer";
-import { Subscription } from "rxjs/Subscription";
+import { Observer } from 'rxjs/Observer';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-staff-type-table',
@@ -26,11 +26,13 @@ export class StaffTypeTableComponent implements OnInit, OnDestroy {
     const observableNumbers = Observable.interval(1000);
     this.numberSubscription = observableNumbers.subscribe(
       (number: number) => {
-        console.log(number);
+        if (number < 10) {
+          console.log(number);
+        }
       }
     );
 
-    const practiceObservable = Observable.create((observer: Observer) => {
+    const practiceObservable = Observable.create((observer: Observer<any>) => {
       setTimeout(() => {
         observer.next('first package');
       }, 2000);
@@ -43,13 +45,13 @@ export class StaffTypeTableComponent implements OnInit, OnDestroy {
     });
     this.practiceSubscription = practiceObservable.subscribe(
       (data: string) => {
-        console.log(data)
+        console.log(data);
       },
       (error: string) => {
-        console.log(error)
+        console.log(error);
       },
       () => {
-        console.log('completed')
+        console.log('completed');
       }
     );
   }
@@ -62,8 +64,5 @@ export class StaffTypeTableComponent implements OnInit, OnDestroy {
   whenClicked() {
     this.staffTypeService.printToConsole();
   }
-
-
-
 
 }
